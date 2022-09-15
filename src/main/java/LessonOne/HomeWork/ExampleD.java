@@ -22,16 +22,28 @@ public class ExampleD {
 
         String result = "";
 
-        if(c < 0){
+        if(c<0 || (a == 0 && ((c*c)-b) != 0)) {
             result = "NO SOLUTION";
-        } else if(a==0 && b == 0 && c == 0){
+        } else if (a==0 && (c*c) == b) {
             result = "MANY SOLUTIONS";
-        } else if(a==1 && b == 0 && c == 0) {
-            result = "0";
-        } else if(a!=0) {
+        } else if ( (((c*c)-b) % a ) == 0) {
             int x  = ((c*c)-b)/a;
             result = "" + x;
         }
+
+        /*(a == 0){
+            result = "NO SOLUTION";
+            if(b == 0 && c == 0){
+                result = "MANY SOLUTIONS";
+            }
+        } else if( c < 0 ){
+            result = "NO SOLUTION";
+        } else {
+
+            int x  = ((c*c)-b)/a;
+            result = "" + x;
+
+        }*/
 
         return result;
 
