@@ -12,6 +12,7 @@
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
         <junit.version>4.13.2</junit.version>
+        <junit-params.version>5.9.0</junit-params.version>
         <slf4j.version>1.7.30</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
@@ -24,6 +25,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-params.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
@@ -32,6 +39,12 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -1,4 +1,4 @@
-package LessonOne.HomeWork;
+package LessonOne.HomeWorkLsn1;
 
 import org.junit.Assert;
 import org.junit.Test;
