@@ -1,6 +1,7 @@
 package Trenings03.Lesson1Stack;
 
 //найти наименьшее справа для каждого элемента
+//Использовал стек, но лучше использовать очередь
 
 import java.util.Arrays;
 import java.util.Stack;
