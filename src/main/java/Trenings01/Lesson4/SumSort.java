@@ -13,24 +13,26 @@ public class SumSort {
 
     }
 
-    static void sumSort(int[] array){
+    static int[] sumSort(int[] array){
         int max = Arrays.stream(array).max().getAsInt();
         int min = Arrays.stream(array).min().getAsInt();
         int[] counter = new int[max - min + 2];
         List<Integer> result = new ArrayList<>();
 
-        System.out.println("Input[] = " + Arrays.toString(array));
+        //System.out.println("Input[] = " + Arrays.toString(array));
 
         for(int i : array){
             counter[i] = counter[i]+1;
         }
-        System.out.println("Counter[] = " + Arrays.toString(counter));
+        //System.out.println("Counter[] = " + Arrays.toString(counter));
 
         for(int i = 1; i < counter.length; i++){
             for(int a = 0; a < counter[i]; a++){
                 result.add(i);
             }
         }
-        System.out.println("Result[] = " + result);
+        //System.out.println("Result[] = " + result);
+
+        return counter;
     }
 }
