@@ -14,7 +14,7 @@ public class Example4 {
 
         String[] words = input.split(", ");
         HashMap<String, ArrayList<String>> groups = new HashMap<>();
-        //так же можно считать через сортировку подсчетом в качестве оптимизации
+        //так же можно считать через сортировку подсчетом в качестве оптимизации (под большие слова)
         for(String s : words){
             char[] chars = s.toCharArray();
             Arrays.sort(chars);
