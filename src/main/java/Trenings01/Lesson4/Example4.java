@@ -8,6 +8,7 @@ import java.util.*;
 public class Example4 {
 
     public static void main(String[] args) {
+        System.out.println("input = eat, tea, tan, ate, nat, bat");
         solution("eat, tea, tan, ate, nat, bat");
     }
     private static void solution(String input){
@@ -26,7 +27,7 @@ public class Example4 {
         }
 
         for(String s : groups.keySet()){
-            System.out.println(s);
+            //System.out.println(s);
             System.out.println(groups.get(s));
         }
     }
