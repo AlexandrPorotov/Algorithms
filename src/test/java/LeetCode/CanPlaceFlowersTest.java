@@ -100,4 +100,5 @@ class CanPlaceFlowersTest {
         assertEquals(expected,actual);
 
     }
+
 }
