@@ -5,7 +5,6 @@ package Trenings03.Lesson1Stack;
 //ограничения, числа не больше 10
 //Использовал стек, но лучше использовать очередь
 
-import java.nio.charset.CharsetEncoder;
 import java.util.*;
 
 public class CalculatingTheExpression {
