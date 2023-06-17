@@ -22,6 +22,7 @@ public class NumberOfSeniorCitizens {
         }
 
         return count;
+
     }
 
 }
