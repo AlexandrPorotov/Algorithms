@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 //The phone numbers and seat numbers of the passengers are distinct.
 class NumberOfSeniorCitizensTest {
 
+
     private static NumberOfSeniorCitizens numberOfSeniorCitizens;
 
     @BeforeAll
