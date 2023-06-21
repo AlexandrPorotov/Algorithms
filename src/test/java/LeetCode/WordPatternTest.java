@@ -110,7 +110,6 @@ class WordPatternTest {
         boolean actual = wordPattern.wordPattern(pattern, s);
 
         assertEquals(excepted,actual);
-
     }
 
 }
