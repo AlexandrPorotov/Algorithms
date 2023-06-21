@@ -15,7 +15,15 @@ public class WordPattern {
         String[] pat = pattern.split("");
         String[] str = s.split(" ");
 
+        if(str.length == 1) {
+            if(pat.length == 1){
+                return true;
+            }
+            return false;
+        }
+
         for(int i = 0; i <= pattern.length()-1; i++){
+
             if(!map.containsKey(pat[i]) && !map.containsValue(str[i])) {
                 map.put(pat[i], str[i]);
             }
