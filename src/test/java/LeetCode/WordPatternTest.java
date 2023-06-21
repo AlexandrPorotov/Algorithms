@@ -83,4 +83,34 @@ class WordPatternTest {
 
     }
 
+    //Input: pattern = "abba", s = "dog dog dog dog"
+    //Output: false
+    @Test
+    void wordPattern_case_5() {
+
+        String pattern = "jquerry";
+        String s = "jquerry";
+
+        boolean excepted = false;
+        boolean actual = wordPattern.wordPattern(pattern, s);
+
+        assertEquals(excepted,actual);
+
+    }
+
+    //Input: pattern = "a", s = "a
+    //Output: true
+    @Test
+    void wordPattern_case_6() {
+
+        String pattern = "a";
+        String s = "a";
+
+        boolean excepted = true;
+        boolean actual = wordPattern.wordPattern(pattern, s);
+
+        assertEquals(excepted,actual);
+
+    }
+
 }
