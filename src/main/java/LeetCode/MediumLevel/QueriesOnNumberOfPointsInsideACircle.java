@@ -52,4 +52,5 @@ public class QueriesOnNumberOfPointsInsideACircle {
 
         return result;
     }
+
 }
