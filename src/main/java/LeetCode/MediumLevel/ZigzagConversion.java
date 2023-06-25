@@ -1,7 +1,5 @@
 package LeetCode.MediumLevel;
 
-import java.util.Arrays;
-
 //The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
 // (you may want to display this pattern in a fixed font for better legibility)
 //
@@ -18,15 +16,34 @@ public class ZigzagConversion {
 
     public String convert(String s, int numRows) {
 
-        char[] letters = s.toCharArray();
+        if (numRows == 1) {
+            return s;
+        }
 
-        char[][] result = new char[s.length()][numRows];
+        StringBuilder answer = new StringBuilder();
+        int n = s.length();
+        int diff = 2 * (numRows - 1);
+        int diagonalDiff = diff;
+        int secondIndex;
+        int index;
+        for (int i = 0; i < numRows; i++) {
+            index = i;
 
+            while (index < n) {
+                answer.append(s.charAt(index));
+                if (i != 0 && i != numRows - 1) {
+                    diagonalDiff = diff-2*i;
+                    secondIndex = index + diagonalDiff;
 
+                    if (secondIndex < n) {
+                        answer.append(s.charAt(secondIndex));
+                    }
+                }
+                index += diff;
+            }
+        }
 
-        System.out.println(Arrays.deepToString(result));
-
-        return "0";
+        return answer.toString();
     }
 
 }
