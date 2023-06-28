@@ -7,16 +7,14 @@ import java.util.Stack;
 //https://leetcode.com/problems/rotate-array/?envType=study-plan-v2&envId=top-interview-150
 public class RotateArray {
 
-    public int[] rotateVol1(int[] nums, int k) {
+    public int[] rotate(int[] nums, int k) {
 
-        if(!(k > nums.length)){return nums;}
 
+        k %= nums.length;
 
         int[] leftPart = Arrays.copyOfRange(nums,0,nums.length-k);
-        //System.out.println(Arrays.toString(leftPart));
 
         int[] rightPart = Arrays.copyOfRange(nums,nums.length-k,nums.length);
-        //System.out.println(Arrays.toString(rightPart));
 
         int[] result = new int[nums.length];
 
@@ -28,14 +26,15 @@ public class RotateArray {
             result[i+rightPart.length] = leftPart[i];
         }
 
-        //System.out.println(Arrays.toString(result));
-        System.out.println(Arrays.toString(nums));
-
         return result;
 
     }
 
-    public int[] rotate(int[] nums, int k) {
+    public int[] rotate1(int[] nums, int k) {
+
+        System.out.println(k);
+        k %= nums.length;
+        System.out.println(k);
 
         int[] result = new int[nums.length];
 
@@ -53,19 +52,7 @@ public class RotateArray {
         System.out.println(stackRight);
         System.out.println(stackLeft);
 
-        int index = 0;
-
-        while (!stackRight.empty()){
-            result[index] = stackRight.pop();
-            index++;
-        }
-
-        System.out.println(Arrays.toString(result));
-
-        while (!stackLeft.empty()){
-            result[index] = stackLeft.pop();
-            index++;
-        }
+        //make result
 
         System.out.println(Arrays.toString(result));
 
