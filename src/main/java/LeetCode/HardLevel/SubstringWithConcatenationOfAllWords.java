@@ -22,28 +22,28 @@ public class SubstringWithConcatenationOfAllWords {
         List<Integer> result = new ArrayList<>();
         int length = words[0].length();
         int allLength = words.length * length;
-        System.out.println("Length of one word  = " + length);
-        System.out.println("Length of all words = " + allLength);
+        //System.out.println("Length of one word  = " + length);
+        //System.out.println("Length of all words = " + allLength);
 
         for(String word : words){
             map.putIfAbsent(map.size() + 1,word);
         }
 
 
-        System.out.println("map = " + map);
-        System.out.println("string = " + s);
+        //System.out.println("map = " + map);
+        //System.out.println("string = " + s);
 
         int left = 0;
-        for(int right = allLength; right <= s.length(); right++){
+        for(int right = allLength; right <= s.length(); right+=length){
             String subString = s.substring(left,right);
-            System.out.println("sub string = " + subString + "; left = " + left);
+            //System.out.println("sub string = " + subString + "; left = " + left);
 
             for(Integer i : map.keySet()){
                 subString = removeFirstOccurrence(subString,map.get(i));
-                System.out.println("rep i - " + i + " = " + subString);
+                //System.out.println("rep i - " + i + " = " + subString);
             }
 
-            System.out.println("sub string after replace = " + subString);
+            //System.out.println("sub string after replace = " + subString);
             if(subString.length() == 0){
                 result.add(left);
             }
@@ -51,7 +51,7 @@ public class SubstringWithConcatenationOfAllWords {
             left++;
         }
 
-        System.out.println(result);
+        //System.out.println(result);
 
         return result;
     }
