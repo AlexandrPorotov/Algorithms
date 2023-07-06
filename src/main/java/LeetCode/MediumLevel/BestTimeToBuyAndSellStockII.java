@@ -1,6 +1,8 @@
 package LeetCode.MediumLevel;
 
 
+import java.util.Arrays;
+
 //You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 //
 //On each day, you may decide to buy and/or sell the stock. You can only hold at most
@@ -12,23 +14,18 @@ public class BestTimeToBuyAndSellStockII {
 
     public int maxProfit(int[] prices) {
 
-        int minPrice = 0;
-        int maxPrice = prices[0];
-        int profit = 0;
+        System.out.println("prices = " + Arrays.toString(prices));
 
-        for(int i = 0; i < prices.length; i++){
-            if(maxPrice > prices[i] && minPrice < prices[i]){
-                minPrice = prices[i];
-            } else {
-                profit = profit + (maxPrice - minPrice);
-                maxPrice = prices[i];
-                minPrice = 0;
-            }
-
+        //Input: prices = [7,1,5,3,6,4]
+        if(prices.length == 1){
+            return 0;
         }
-
-        System.out.println(maxPrice);
-        System.out.println(minPrice);
+        int profit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if(prices[i] - prices[i-1] >= 0){
+                profit += prices[i] - prices[i-1];
+            }
+        }
 
         return profit;
     }
