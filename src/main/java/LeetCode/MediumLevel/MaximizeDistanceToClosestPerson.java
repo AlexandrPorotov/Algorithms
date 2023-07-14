@@ -21,24 +21,24 @@ public class MaximizeDistanceToClosestPerson {
             if(seats[right] == 0){
                 count++;
                 if(right == seats.length-1){
-                    //System.out.println("Count = " + count);
-                    //System.out.println("left = " + left + "; right = " + right + " end of array");
+                    System.out.println("Count = " + count);
+                    System.out.println("left = " + left + "; right = " + right + " end of array");
                     if(result < (right-left)){
                         result = right - left;
-                        //System.out.println("result = " + result);
+                        System.out.println("result = " + result);
                     }
                 }
             } else {
                 if(seats[0] == 0 && left == 0){
-                    //System.out.println("Count = " + count);
-                    //System.out.println("Start of array - left = " + left + "; right = " + right);
+                    System.out.println("Count = " + count);
+                    System.out.println("Start of array - left = " + left + "; right = " + right);
                     if(result < (right-left)){
                         result = right - left;
-                        //System.out.println("result = " + result);
+                        System.out.println("result = " + result);
                     }
                 }
-                //System.out.println("Count = " + count);
-                //System.out.println("left = " + left + "; right = " + right);
+                System.out.println("Count = " + count);
+                System.out.println("left = " + left + "; right = " + right);
                 result = Math.max(result, (right - left) / 2);
                 left = right;
                 count = 0;
