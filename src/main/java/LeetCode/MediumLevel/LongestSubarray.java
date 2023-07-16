@@ -10,9 +10,31 @@ package LeetCode.MediumLevel;
 //https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/
 public class LongestSubarray {
 
+    //two pointers
     public int longestSubarray(int[] nums){
 
-        return 0;
+        int left = 0;
+        int countZeros = 0;
+        int result = 0;
+
+        for(int right = 0; right < nums.length; right++){
+
+            if(nums[right] == 0){
+                countZeros++;
+            }
+
+            while (countZeros > 1){
+                if(nums[left] == 0){
+                    countZeros--;
+                }
+                left++;
+            }
+
+            result = Math.max(result, right-left+1-countZeros);
+
+        }
+
+        return (result == nums.length) ? result-1 : result;
     }
 
 //    public int longestSubarray(int[] nums) {
