@@ -27,7 +27,24 @@ class IntersectionOfTwoArraysTest {
         int[] nums2 = {2,2};
         int[] expected = {2};
 
+
+        long startTime = System.nanoTime();
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
+        long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
+
         int[] actual = intersection.intersection(nums1,nums2);
+
+        long memoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        long memoryUsed = memoryAfter - memoryBefore;
+        double memoryUsedInMegabytes = (double) memoryUsed / (1024 * 1024);
+
+
+        long endTime = System.nanoTime();
+        double duration = (double) (endTime - startTime) / 1000000 ;
+
+        System.out.println("Время выполнения метода: " + duration + " ms");
+        System.out.println("Использование памяти: " + memoryUsedInMegabytes + " МБ");
 
         assertArrayEquals(expected,actual);
 
@@ -43,7 +60,23 @@ class IntersectionOfTwoArraysTest {
         int[] nums2 = {9,4,9,8,};
         int[] expected = {4,9};
 
+        long startTime = System.nanoTime();
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
+        long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
+
         int[] actual = intersection.intersection(nums1,nums2);
+
+        long memoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        long memoryUsed = memoryAfter - memoryBefore;
+        double memoryUsedInMegabytes = (double) memoryUsed / (1024 * 1024);
+
+
+        long endTime = System.nanoTime();
+        double duration = (double) (endTime - startTime) / 1000000 ;
+
+        System.out.println("Время выполнения метода: " + duration + " ms");
+        System.out.println("Использование памяти: " + memoryUsedInMegabytes + " МБ");
 
         assertArrayEquals(expected,actual);
 
