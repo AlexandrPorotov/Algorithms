@@ -39,18 +39,15 @@ public class MaximumProductSubarray {
         int currMin = nums[0];
 
         for (int i = 1; i < n; i++) {
-            // Если текущий элемент отрицательный, меняем значения currMax и currMin
             if (nums[i] < 0) {
                 int temp = currMax;
                 currMax = currMin;
                 currMin = temp;
             }
 
-            // Обновляем значения currMax и currMin
             currMax = Math.max(nums[i], currMax * nums[i]);
             currMin = Math.min(nums[i], currMin * nums[i]);
 
-            // Обновляем значение maxProduct
             maxProduct = Math.max(maxProduct, currMax);
         }
 
