@@ -1,13 +1,12 @@
 package LeetCode.EasyLevel;
 
-import LeetCode.EasyLevel.TwoNumbers;
-import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class TwoNumbersTest {
 
@@ -24,7 +23,7 @@ class TwoNumbersTest {
         System.out.println(Arrays.toString(actual));
         int[] expected = new int[]{0,1};
 
-        Assert.assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual);
 
     }
 
@@ -41,7 +40,7 @@ class TwoNumbersTest {
         System.out.println(Arrays.toString(actual));
         int[] expected = new int[]{1,2};
 
-        Assertions.assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual);
 
     }
 
@@ -58,7 +57,7 @@ class TwoNumbersTest {
         System.out.println(Arrays.toString(actual));
         int[] expected = new int[]{0,1};
 
-        Assertions.assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual);
 
     }
 
@@ -75,7 +74,7 @@ class TwoNumbersTest {
         System.out.println(Arrays.toString(actual));
         int[] expected = new int[]{0,2};
 
-        Assertions.assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual);
 
     }
 
@@ -91,6 +90,6 @@ class TwoNumbersTest {
         System.out.println(Arrays.toString(actual));
         int[] expected = new int[]{0,1};
 
-        Assertions.assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual);
     }
 }

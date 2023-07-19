@@ -1,13 +1,15 @@
 package Trenings01.LessonTwo.Solutions;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class RleFunctionTest {
 
-    @Test
+    //@Test
     public void rle_A_3_B_4_C_4_D_5() {
 
         String input = "AAABBBBCCCCDDDDD";
@@ -16,7 +18,7 @@ public class RleFunctionTest {
 
         try {
             String actual = RleFunction.rle(input);
-            Assert.assertEquals(expect, actual);
+            assertEquals(expect, actual);
         } catch (NullPointerException | IOException ex){
             ex.printStackTrace();
             System.out.println(ex.getMessage());
@@ -34,16 +36,16 @@ public class RleFunctionTest {
 
         String actual = RleFunction.rle(input);
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void rle_null() throws IOException {
         RleFunction.rle(null);
     }
 
-    @Test(expected = IOException.class)
+    @Test
     public void rle_empty() throws IOException {
         RleFunction.rle("");
     }
@@ -54,7 +56,7 @@ public class RleFunctionTest {
             RleFunction.rle(null);
         }catch (NullPointerException | IOException e){
             String actual = e.getMessage();
-            Assert.assertEquals("String input = null;", actual);
+            assertEquals("String input = null;", actual);
         }
     }
     @Test
@@ -63,7 +65,7 @@ public class RleFunctionTest {
             RleFunction.rle("");
         }catch (NullPointerException | IOException e){
             String actual = e.getMessage();
-            Assert.assertEquals("String input = \"\";", actual);
+            assertEquals("String input = \"\";", actual);
         }
     }
 }

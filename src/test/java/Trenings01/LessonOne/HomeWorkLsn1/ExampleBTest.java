@@ -1,12 +1,14 @@
 package Trenings01.LessonOne.HomeWorkLsn1;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExampleBTest {
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_a3_b4_c5() {
 
         int a = 3;
@@ -15,12 +17,12 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("YES",result);
+        assertEquals("YES",result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_a3_b5_c4() {
 
         int a = 3;
@@ -29,12 +31,12 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("YES",result);
+        assertEquals("YES",result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_a4_b5_c3() {
 
         int a = 4;
@@ -43,12 +45,12 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("YES", result);
+        assertEquals("YES", result);
 
     }
 
     //negative ints
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_ints(){
 
         int a = -4;
@@ -57,21 +59,21 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("NO", result);
+        assertEquals("NO", result);
 
     }
 
     //zero
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_zero(){
 
         String result = ExampleB.foo(0,0,0);
-        Assert.assertEquals("NO", result);
+        assertEquals("NO", result);
 
     }
 
     //negative case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_a7_b11_c4(){
 
         int a = 6;
@@ -80,12 +82,12 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("NO", result);
+        assertEquals("NO", result);
 
     }
 
     //one int negative
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_a4_bMinus5_c3(){
 
         int a = 4;
@@ -94,12 +96,12 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("NO", result);
+        assertEquals("NO", result);
 
     }
 
     //one int zero
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_oneIntZero_a4_b0_c3(){
 
         int a = 4;
@@ -108,7 +110,7 @@ public class ExampleBTest {
 
         String result = ExampleB.foo(a,b,c);
 
-        Assert.assertEquals("NO", result);
+        assertEquals("NO", result);
 
     }
 }

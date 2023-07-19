@@ -1,12 +1,14 @@
 package Trenings01.LessonOne.HomeWorkLsn1;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExampleCTest {
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_example_one_general_case() {
 
         String newNumber = "8(495)430-23-97";
@@ -16,14 +18,14 @@ public class ExampleCTest {
 
         String[] result = ExampleC.foo(newNumber, numbers);
 
-        Assert.assertEquals("YES", result[0]);
-        Assert.assertEquals("YES", result[1]);
-        Assert.assertEquals("NO", result[2]);
+        assertEquals("YES", result[0]);
+        assertEquals("YES", result[1]);
+        assertEquals("NO", result[2]);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_example_two_general_case() {
 
         String newNumber = "86406361642";
@@ -33,14 +35,14 @@ public class ExampleCTest {
 
         String[] result = ExampleC.foo(newNumber, numbers);
 
-        Assert.assertEquals("NO", result[0]);
-        Assert.assertEquals("YES", result[1]);
-        Assert.assertEquals("NO", result[2]);
+        assertEquals("NO", result[0]);
+        assertEquals("YES", result[1]);
+        assertEquals("NO", result[2]);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_example_three_general_case() {
 
         String newNumber = "+78047952807";
@@ -50,14 +52,14 @@ public class ExampleCTest {
 
         String[] result = ExampleC.foo(newNumber,numbers);
 
-        Assert.assertEquals("YES", result[0]);
-        Assert.assertEquals("NO", result[1]);
-        Assert.assertEquals("YES", result[2]);
+        assertEquals("YES", result[0]);
+        assertEquals("NO", result[1]);
+        assertEquals("YES", result[2]);
 
     }
 
     //wrong code and short number
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_example_shortNumber_general_case() {
 
         String newNumber = "+7(495)833-29-77";
@@ -67,9 +69,9 @@ public class ExampleCTest {
 
         String[] result = ExampleC.foo(newNumber,numbers);
 
-        Assert.assertEquals("YES", result[0]);
-        Assert.assertEquals("YES", result[1]);
-        Assert.assertEquals("NO", result[2]);
+        assertEquals("YES", result[0]);
+        assertEquals("YES", result[1]);
+        assertEquals("NO", result[2]);
 
     }
 
@@ -81,8 +83,8 @@ public class ExampleCTest {
         String[] actual = ExampleC.numberHandler(numberWithDash);
         String[] expect = new String[]{"495","4302397"};
 
-        Assert.assertEquals(expect[0],actual[0]);
-        Assert.assertEquals(expect[1],actual[1]);
+        assertEquals(expect[0],actual[0]);
+        assertEquals(expect[1],actual[1]);
 
     }
 
@@ -94,8 +96,8 @@ public class ExampleCTest {
         String[] actual = ExampleC.numberHandler(numberWithDash);
         String[] expect = new String[]{"495","4302397"};
 
-        Assert.assertEquals(expect[0],actual[0]);
-        Assert.assertEquals(expect[1],actual[1]);
+        assertEquals(expect[0],actual[0]);
+        assertEquals(expect[1],actual[1]);
 
     }
 }

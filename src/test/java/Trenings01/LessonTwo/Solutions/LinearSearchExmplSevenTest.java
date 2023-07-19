@@ -1,7 +1,10 @@
 package Trenings01.LessonTwo.Solutions;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LinearSearchExmplSevenTest {
 
@@ -13,7 +16,7 @@ public class LinearSearchExmplSevenTest {
         int expect = 7;
         int actual = LinearSearchExmplSeven.foo(array);
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 

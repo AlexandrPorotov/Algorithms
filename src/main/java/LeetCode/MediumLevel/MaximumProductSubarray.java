@@ -38,6 +38,7 @@ public class MaximumProductSubarray {
         int currMax = nums[0];
         int currMin = nums[0];
 
+        System.out.println("Nums[0] = "+nums[0]);
         for (int i = 1; i < n; i++) {
             if (nums[i] < 0) {
                 int temp = currMax;

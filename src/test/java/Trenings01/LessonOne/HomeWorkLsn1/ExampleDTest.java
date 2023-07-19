@@ -1,7 +1,9 @@
 package Trenings01.LessonOne.HomeWorkLsn1;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExampleDTest {
 
@@ -12,7 +14,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,0,0);
         String expect = "0";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -23,7 +25,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,2,3);
         String expect = "7";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -34,7 +36,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,2,-3);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -45,7 +47,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(0,0,0);
         String expect = "MANY SOLUTIONS";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -56,7 +58,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,1,1);
         String expect = "0";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -67,7 +69,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(-1,-1,-1);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -78,7 +80,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,1,1);
         String expect = "0";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -88,7 +90,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(1,-1,-1);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -98,7 +100,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(0,0,-1);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -108,7 +110,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(0,-1,1);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -118,7 +120,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(0,1,0);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -128,7 +130,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(-1,-1,0);
         String expect = "-1";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -138,7 +140,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(-1,1,-1);
         String expect = "NO SOLUTION";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 
@@ -148,7 +150,7 @@ public class ExampleDTest {
         String actual = ExampleD.foo(-1,0,1);
         String expect = "-1";
 
-        Assert.assertEquals(expect,actual);
+        assertEquals(expect,actual);
 
     }
 }

@@ -18,38 +18,38 @@ public class SubstringWithConcatenationOfAllWords {
 
     public List<Integer> findSubstring(String s, String[] words) {
 
-        Map<Integer, String > map = new HashMap<>();
+        Map<String , Integer > map = new HashMap<>();
         List<Integer> result = new ArrayList<>();
         int length = words[0].length();
         int allLength = words.length * length;
-        //System.out.println("Length of one word  = " + length);
-        //System.out.println("Length of all words = " + allLength);
+        System.out.println("Length of one word  = " + length);
+        System.out.println("Length of all words = " + allLength);
 
         for(String word : words){
-            map.putIfAbsent(map.size() + 1,word);
+            map.putIfAbsent(word,map.size() + 1);
         }
 
 
-        //System.out.println("map = " + map);
-        //System.out.println("string = " + s);
+        System.out.println("map = " + map);
+        System.out.println("string = " + s);
 
+        Set<Integer> seen = new HashSet<>();
+        int tmpLeft = 0;
         int left = 0;
-        for(int right = allLength; right <= s.length(); right+=length){
-            String subString = s.substring(left,right);
-            //System.out.println("sub string = " + subString + "; left = " + left);
+        for(int right = length; right <= s.length(); right+=length){
 
-            for(Integer i : map.keySet()){
-                subString = removeFirstOccurrence(subString,map.get(i));
-                //System.out.println("rep i - " + i + " = " + subString);
+
+            //разобраться с границами и как хранить находить повторяющиеся слова (тк ща у меня в ключе слова в мапе
+            if(map.containsKey(s.substring(left,right)) && !seen.containsAll(map.values())){
+                seen.add(map.get(s.substring(left,right)));
+            }else if(seen.containsAll(map.values())) {
+                System.out.println(s.substring(left, right));
+                result.add(left - allLength);
+                seen.clear();
             }
-
-            //System.out.println("sub string after replace = " + subString);
-            if(subString.length() == 0){
-                result.add(left);
-            }
-
-            left++;
+            left +=length;
         }
+
 
         //System.out.println(result);
 
@@ -69,6 +69,8 @@ public class SubstringWithConcatenationOfAllWords {
             }
             left += length;
         }
+
+
 
         return input;
     }

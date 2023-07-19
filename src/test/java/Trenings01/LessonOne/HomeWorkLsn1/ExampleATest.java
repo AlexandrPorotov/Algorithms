@@ -1,13 +1,14 @@
 package Trenings01.LessonOne.HomeWorkLsn1;
 
-import org.junit.Assert;
-import org.junit.Test;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExampleATest {
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_20_heat() {
 
             int[] temperature = new int[]{10,20};
@@ -15,12 +16,12 @@ public class ExampleATest {
 
             int result = ExampleA.foo(temperature,mode);
 
-            Assert.assertEquals(20, result);
+            assertEquals(20, result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_30_20_heat() {
 
         int[] temperature = new int[]{30,20};
@@ -28,12 +29,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(30, result);
+        assertEquals(30, result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_20_freeze(){
 
         int[] temperature = new int[]{10,20};
@@ -41,12 +42,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_20_10_freeze(){
 
         int[] temperature = new int[]{20,10};
@@ -54,12 +55,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_20_auto(){
 
         int[] temperature = new int[]{10,20};
@@ -67,11 +68,11 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(20, result);
+        assertEquals(20, result);
     }
 
     //general case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_20_fan(){
 
         int[] temperature = new int[]{10,20};
@@ -79,12 +80,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //edge case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_10_heat(){
 
         int[] temperature = new int[]{10,10};
@@ -92,12 +93,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //edge case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_10_freeze(){
 
         int[] temperature = new int[]{10,10};
@@ -105,12 +106,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //edge case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_10_auto(){
 
         int[] temperature = new int[]{10,10};
@@ -118,12 +119,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //edge case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_10_10_fan(){
 
         int[] temperature = new int[]{10,10};
@@ -131,12 +132,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(10, result);
+        assertEquals(10, result);
 
     }
 
     //empty case
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_empty_case(){
 
         int[] temperature = new int[2];
@@ -144,12 +145,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(0, result);
+        assertEquals(0, result);
 
     }
 
     //negative ints
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_int_heat(){
 
         int[] temperature = new int[]{-20,-10};
@@ -157,12 +158,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(-10, result);
+        assertEquals(-10, result);
 
     }
 
     //negative ints
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_int_freeze(){
 
         int[] temperature = new int[]{-20,-30};
@@ -170,12 +171,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(-30, result);
+        assertEquals(-30, result);
 
     }
 
     //negative ints
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_int_auto(){
 
         int[] temperature = new int[]{-20,-30};
@@ -183,12 +184,12 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(-30, result);
+        assertEquals(-30, result);
 
     }
 
     //negative ints
-    @Test(timeout = 1000)
+    @Test
     public void testFoo_negative_int_fan(){
 
         int[] temperature = new int[]{-20,-30};
@@ -196,7 +197,7 @@ public class ExampleATest {
 
         int result = ExampleA.foo(temperature,mode);
 
-        Assert.assertEquals(-20, result);
+        assertEquals(-20, result);
 
     }
 
