@@ -38,20 +38,31 @@ public class MaximumProductSubarray {
         int currMax = nums[0];
         int currMin = nums[0];
 
+        System.out.println("Init currMax = " + currMax);
+        System.out.println("Init currMin = " + currMin);
+
+        System.out.println("Nums[0] = "+nums[0]);
         for (int i = 1; i < n; i++) {
             // Если текущий элемент отрицательный, меняем значения currMax и currMin
+            System.out.println("STEP " + i);
+            System.out.println("Nums["+i+"] = "+nums[i]);
             if (nums[i] < 0) {
                 int temp = currMax;
                 currMax = currMin;
                 currMin = temp;
+                System.out.println("currMax = " + currMax);
+                System.out.println("currMin = " + currMin);
             }
 
             // Обновляем значения currMax и currMin
             currMax = Math.max(nums[i], currMax * nums[i]);
+            System.out.println("currMax = " + currMax);
             currMin = Math.min(nums[i], currMin * nums[i]);
+            System.out.println("currMin = " + currMin);
 
             // Обновляем значение maxProduct
             maxProduct = Math.max(maxProduct, currMax);
+            System.out.println("Max product = " + maxProduct);
         }
 
         return maxProduct;

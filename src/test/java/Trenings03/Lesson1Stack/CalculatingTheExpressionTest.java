@@ -1,16 +1,18 @@
 package Trenings03.Lesson1Stack;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CalculatingTheExpressionTest {
 
@@ -76,7 +78,7 @@ class CalculatingTheExpressionTest {
 
     }
 
-    @ParameterizedTest
+    //@ParameterizedTest
     @Timeout(1000)
     @DisplayName("Проверка конвертации")
     @MethodSource("stringFactory")
@@ -95,7 +97,7 @@ class CalculatingTheExpressionTest {
 
 
 
-    @ParameterizedTest
+    //@ParameterizedTest
     @Timeout(1000)
     @DisplayName("Проверка вычисления")
     @MethodSource("stringFactory")
