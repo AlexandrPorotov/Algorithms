@@ -142,4 +142,37 @@ class SubstringWithConcatenationOfAllWordsTest {
         assertIterableEquals(expected,actual);
     }
 
+    //s = "abababab" words = ["ab","ba"]
+    //Output: []
+    //case # 158
+    @Test
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
+    @DisplayName("Case 6 - \"ab\",\"ba\"")
+    void findSubstring_case_6() {
+        String input = "abababab";
+        String[] words = {"ab","ba"};
+        List<Integer> expected = new ArrayList<>();
+
+        List<Integer> actual = substringWithConcatenationOfAllWords.findSubstring(input,words);
+
+        assertIterableEquals(expected,actual);
+    }
+
+    //s = "abaababbaba" words = ["ab","ba","ab","ba"]
+    //Output: [1,3]
+    @Test
+    @Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
+    @DisplayName("Case 7 - \"ab\",\"ba\",\"ab\",\"ba\"")
+    void findSubstring_case_7() {
+        String input = "abaababbaba";
+        String[] words = {"ab","ba","ab","ba"};
+        List<Integer> expected = new ArrayList<>();
+        expected.add(1);
+        expected.add(3);
+
+        List<Integer> actual = substringWithConcatenationOfAllWords.findSubstring(input,words);
+
+        assertIterableEquals(expected,actual);
+    }
+
 }
