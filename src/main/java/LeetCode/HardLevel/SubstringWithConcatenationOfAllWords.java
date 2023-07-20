@@ -20,11 +20,63 @@ public class SubstringWithConcatenationOfAllWords {
 
         List<Integer> result = new ArrayList<>();
         int length = words[0].length();
+        int allLength = length * words.length;
+        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> buff = new HashMap<>();
+        Map<String, Integer> sample = new HashMap<>();
+        for(String word : words){
+            if(map.containsKey(word)){
+                map.put(word, map.get(word)+1);
+                buff.put(word, buff.get(word)+1);
+            } else {
+                map.put(word, 1);
+                buff.put(word, 1);
+            }
+            sample.put(word,0);
+        }
+
+
+        System.out.println(map);
+
+        int left = 0;
+        for(int right = allLength; right <= s.length(); right++){
+
+            String subString = s.substring(left,right);
+            if(map.containsKey(subString.substring(0,length))) {
+                System.out.println("sub string = " + subString);
+                int count = 0;
+                while (count != subString.length()){
+                    String substring = subString.substring(count, count + length);
+                    System.out.println(substring);
+                    if(map.containsKey(substring)){
+                        map.put(substring, map.get(substring)-1);
+                    }
+                    count += length;
+                }
+                System.out.println(map);
+                if(map.equals(sample)){
+                    result.add(left);
+                }
+                map.putAll(buff);
+                System.out.println(buff);
+            }
+            left++;
+
+        }
+        return result;
+    }
+
+    public List<Integer> findSubstring2(String s, String[] words) {
+
+        List<Integer> result = new ArrayList<>();
+        int length = words[0].length();
         int allLength = words.length * length;
+        Map<String , Integer > map = new HashMap<>();
 
         StringBuilder stringBuilder = new StringBuilder();
         for(String str : words){
             stringBuilder.append(str);
+            map.putIfAbsent(str,map.size() + 1);
         }
         String wordSample = stringBuilder.toString();
 
@@ -32,14 +84,18 @@ public class SubstringWithConcatenationOfAllWords {
         Arrays.sort(arr);
         wordSample = new String(arr);
 
+
+
 //        List<String> wordsList = new ArrayList<>(Arrays.asList(words));
 
         int left = 0;
 //        List<String> buffList = new ArrayList<>();
 
-        for(int right = allLength; right <= s.length(); right+=length){
-            String subString = s.substring(left,right);
-            System.out.println(subString);
+        for(int right = allLength; right <= s.length(); right++){
+
+            if(map.containsKey(s.substring(left, left+length))) {
+                String subString = s.substring(left, right);
+                System.out.println("sub string = " + subString);
 //            int count = 0;
 //            while (count != subString.length()){
 //                String substring = subString.substring(count, count + length);
@@ -47,27 +103,32 @@ public class SubstringWithConcatenationOfAllWords {
 //                System.out.println(buffList);
 //                count += length;
 //            }
-            char[] locArr = subString.toCharArray();
-            Arrays.sort(locArr);
-            subString = new String(locArr);
+                
+                char[] locArr = subString.toCharArray();
+                Arrays.sort(locArr);
+                String sortSubString = new String(locArr);
+                System.out.println("sort sub string = " + sortSubString);
+                System.out.println("sort word sample = " + wordSample);
+                System.out.println("compare = " + sortSubString.compareTo(wordSample));
 
-            System.out.println(subString.compareTo(wordSample) );
-            System.out.println(left);
-            if(subString.compareTo(wordSample) == 0){
-                result.add(left);
+                System.out.println("Left = " + left);
+                if (sortSubString.compareTo(wordSample) == 0) {
+                    //дополнительная проверка
+                    result.add(left);
+                }
             }
 //            if(new HashSet<>(wordsList).contains(buffList)){
 //                System.out.println("Add result = " + left);
 //                result.add(left);
 //            }
 //            buffList.clear();
-            left += length;
+            left++;
         }
 
 
         return result;
     }
-    public List<Integer> findSubstringOld(String s, String[] words) {
+    public List<Integer> findSubstring1(String s, String[] words) {
 
         Map<String , Integer > map = new HashMap<>();
         List<Integer> result = new ArrayList<>();
@@ -88,6 +149,7 @@ public class SubstringWithConcatenationOfAllWords {
         int tmpLeft = 0;
         int left = 0;
         for(int right = length; right <= s.length(); right+=length){
+
 
 
             if(map.containsKey(s.substring(left,right))){
