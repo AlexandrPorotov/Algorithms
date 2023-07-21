@@ -16,7 +16,50 @@ import java.util.*;
 //171 / 178 testcases passed
 public class SubstringWithConcatenationOfAllWords {
 
-    public List<Integer> findSubstring(String s, String[] words) {
+    public List<Integer> findSubstring(String s, String[] words){
+
+        int wordLength = words[0].length();
+        int totalWordsLength = wordLength * words.length;
+        Map<String, Integer> hash = new HashMap<>();
+        List<Integer> ans = new ArrayList<>();
+        char[] s2 = s.toCharArray();
+        for (String value : words) {
+            hash.putIfAbsent(value, hash.size());
+        }
+        int[] count = new int[hash.size()];
+        for (String word : words) {
+            count[hash.get(word)]++;
+        }
+
+        System.out.println("Hash = " + hash);
+        System.out.println("Count = " + Arrays.toString(count));
+
+
+        for (int i = 0; i < wordLength; i++) {
+
+            for (int j = i; j <= s.length() - totalWordsLength; j += wordLength) {
+
+                int[] localCount = new int[hash.size()];
+                for (int k = j + totalWordsLength - wordLength; k >= j; k -= wordLength) {
+
+                    String str = new String(s2, k, wordLength);     // [ k, k+wordLength )
+                    Integer key = hash.get(str);
+
+                    if (!(key != null && count[key] >= ++localCount[key])) {
+                        j = k;
+                        break;
+                    }
+                    if (j == k) {
+                        ans.add(j);
+                    }
+                }
+            }
+        }
+        return ans;
+
+    }
+
+    public List<Integer> findSubstringSolution(String s, String[] words) {
 
         List<Integer> result = new ArrayList<>();
         int length = words[0].length();
