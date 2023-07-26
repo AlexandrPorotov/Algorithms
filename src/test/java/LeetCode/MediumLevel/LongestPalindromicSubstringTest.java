@@ -23,7 +23,7 @@ class LongestPalindromicSubstringTest {
     void longestPalindrome_case_1() {
         String input = "babad";
         System.out.println("Input = " + input);
-        String expected = "bab";
+        String expected = "aba";
 
         String actual = longestPalindromicSubstring.longestPalindrome(input);
 
@@ -38,6 +38,48 @@ class LongestPalindromicSubstringTest {
         String input = "cbbd";
         System.out.println("Input = " + input);
         String expected = "bb";
+
+        String actual = longestPalindromicSubstring.longestPalindrome(input);
+
+        assertEquals(expected,actual);
+    }
+
+    //Input: s = "ac"
+    //Output: "a"
+    @Test
+    @DisplayName("Case 3 - ac")
+    void longestPalindrome_case_3() {
+        String input = "ac";
+        System.out.println("Input = " + input);
+        String expected = "a";
+
+        String actual = longestPalindromicSubstring.longestPalindrome(input);
+
+        assertEquals(expected,actual);
+    }
+
+    //Input: s = "ccc"
+    //Output: "ccc"
+    @Test
+    @DisplayName("Case 4 - ccc")
+    void longestPalindrome_case_4() {
+        String input = "ccc";
+        System.out.println("Input = " + input);
+        String expected = "ccc";
+
+        String actual = longestPalindromicSubstring.longestPalindrome(input);
+
+        assertEquals(expected,actual);
+    }
+
+    //Input: s = "aacabdkacaa"
+    //Output: "aca"
+    @Test
+    @DisplayName("Case 5 - aacabdkacaa")
+    void longestPalindrome_case_5() {
+        String input = "aacabdkacaa";
+        System.out.println("Input = " + input);
+        String expected = "aca";
 
         String actual = longestPalindromicSubstring.longestPalindrome(input);
 
