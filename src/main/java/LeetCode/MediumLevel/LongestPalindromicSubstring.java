@@ -11,24 +11,29 @@ public class LongestPalindromicSubstring {
 
         Map<Character,Integer> map = new HashMap<>();
         char[] letters = s.toCharArray();
-
-        int left = 0;
+        String result = "";
+        int left;
 
         for(int right = 0; right < s.length(); right++){
             if(map.containsKey(letters[right])){
                 left = map.get(letters[right]);
-//                System.out.println(left);
-//                System.out.println(right);
-//                System.out.println(s.substring(left,right+1));
-                return s.substring(left,right+1);
+                System.out.println(left);
+                System.out.println(right);
+                System.out.println(s.substring(left,right+1));
+                result = s.substring(left,right+1);
             } else {
                 map.put(letters[right],right);
             }
         }
+        System.out.println(map);
+        if (map.size() == letters.length){
+            result = s.substring(0,1);
+        } else if(map.size() == 1){
+            result = s;
+        }
 
-//        System.out.println(map);
 
-        return "";
+        return result;
     }
 
 }
